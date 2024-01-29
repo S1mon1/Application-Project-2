@@ -1,0 +1,38 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to right, #0083FF, #FFFFFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #6cacec;
+    padding: 20px;
+    border-radius: 15px;
+    width: 13vw;
+   }
+   
+   .register-form input {
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+   }
+
+   .register-form .login-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+   }
+
+   .register-form .login-button:hover {
+    color:#0083FF;
+   }
+
+   
