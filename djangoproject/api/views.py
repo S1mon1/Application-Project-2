@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Offers
+from .serializers import OfferSerializer
 
 # Create your views here.
 
@@ -39,6 +40,13 @@ def getRoutes(request):
 
 
 @api_view(['GET'])
-def getOffers(reques):
-    offer = Offers.objects.all()
-    return Response('OFFERS')
+def getOffers(request):
+    offers = Offers.objects.all()
+    serializer = OfferSerializer(offers, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getOffer(request, pk):
+    offers = Offers.objects.get(id=pk)
+    serializer = OfferSerializer(offers, many=False)
+    return Response(serializer.data)
