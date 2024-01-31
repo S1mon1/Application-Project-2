@@ -19,7 +19,9 @@ const Offer = () => {
     return (
         <div>
             <Navbar/>
+            <p>{offer?.brand}</p>
             <p>{offer?.model}</p>
+            <p>{offer?.description}</p>
         </div>
     )
 }

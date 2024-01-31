@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <h1>YourDreamCar</h1>
-            <Link to="/offers">TODO</Link>
+            <Link to="/home">Home</Link>
             <Link to="/">Offers</Link>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
