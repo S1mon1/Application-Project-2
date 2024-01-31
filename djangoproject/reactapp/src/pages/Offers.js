@@ -1,5 +1,6 @@
 
 import React, {useState, useEffect} from 'react'
+import ListOffer from '../components/ListOffer'
 
 const Offers = () => {
 
@@ -10,7 +11,7 @@ const Offers = () => {
     }, [])
 
     let getOffers = async () => {
-        let response = await fetch ('http://127.0.0.1:8000/api/offers/')
+        let response = await fetch ('/api/offers/')
         let data = await response.json()
         console.log('DATA:', data)
         setOffers(data)
@@ -20,7 +21,7 @@ const Offers = () => {
         <div>
             <div className="offers-list">
                 {offers.map((offer, index) =>(
-                    <h3 key={index} >{offer.model}</h3>
+                    <ListOffer key={index} offer={offer}/>
                 ))}
             </div>
         </div>

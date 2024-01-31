@@ -5,9 +5,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-   }
-   
-   .register-form {
+}
+
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -16,25 +16,23 @@ body {
     border-radius: 15px;
     width: 13vw;
     align-items: center;
-   }
-   
-   .register-form input {
+}
+
+.login-form input {
     margin-bottom: 10px;
     background-color: #ffffff;
     border: none;
     border-radius: 15px;
     padding: 10px;
-   }
+}
 
-   .register-form .login-button {
+.login-form .create-account-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     text-decoration: none;
-   }
+}
 
-   .register-form .login-button:hover {
+.login-form .create-account-button:hover {
     color:#0083FF;
-   }
-
-   
+}
