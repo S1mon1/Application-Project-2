@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 const Offer = () => {
     const { id: offerId } = useParams()
@@ -17,6 +18,7 @@ const Offer = () => {
 
     return (
         <div>
+            <Navbar/>
             <p>{offer?.model}</p>
         </div>
     )
