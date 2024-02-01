@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import ListOffer from '../components/ListOffer'
 import Navbar from '../components/Navbar'
+import AddButton from '../components/AddButton'
 
 const Offers = () => {
 
@@ -21,6 +22,7 @@ const Offers = () => {
     return (
         <div>
             <Navbar/>
+            <AddButton/>
             <div className="offers-list">
                 {offers.map((offer, index) =>(
                     <ListOffer key={index} offer={offer}/>

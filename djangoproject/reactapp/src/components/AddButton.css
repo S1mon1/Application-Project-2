@@ -1,0 +1,10 @@
+.add_button{
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #4aa2f5;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: black;
+}

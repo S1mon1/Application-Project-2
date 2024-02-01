@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Offers
 from .serializers import OfferSerializer
+from rest_framework import status
 
 # Create your views here.
 
@@ -49,4 +50,15 @@ def getOffers(request):
 def getOffer(request, pk):
     offers = Offers.objects.get(id=pk)
     serializer = OfferSerializer(offers, many=False)
+    return Response(serializer.data)
+
+
+
+@api_view(['POST'])
+def createOffer(request):
+    data = request.data
+    offer = Offers.objects.create(
+        model=data['model']
+    )
+    serializer = OfferSerializer(offer, many=False)
     return Response(serializer.data)
