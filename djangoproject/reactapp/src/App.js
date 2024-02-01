@@ -10,6 +10,7 @@ import Offers from './pages/Offers'
 import Offer from './pages/Offer'
 import Login from './pages/Login'
 import HomeSite from './pages/HomeSite'
+import AddOffer from './pages/AddOffer'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/register" element={<Register/>}></Route>
           <Route path="/home" element={<HomeSite/>}></Route>
+          <Route path="/offer/new" element={<AddOffer/>}></Route>
         </Routes>
       </div>
     </Router>

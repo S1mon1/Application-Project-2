@@ -58,7 +58,9 @@ def getOffer(request, pk):
 def createOffer(request):
     data = request.data
     offer = Offers.objects.create(
-        model=data['model']
+        brand=data['brand'],
+        model=data['model'],
+        description=data['description']
     )
     serializer = OfferSerializer(offer, many=False)
     return Response(serializer.data)
