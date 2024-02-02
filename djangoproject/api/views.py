@@ -64,3 +64,9 @@ def createOffer(request):
     )
     serializer = OfferSerializer(offer, many=False)
     return Response(serializer.data)
+
+@api_view(['DELETE'])
+def deleteOffer(request, pk):
+    offer = Offers.objects.get(id=pk)
+    offer.delete()
+    return Response('Offer was deleted')
