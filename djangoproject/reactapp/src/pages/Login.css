@@ -36,3 +36,9 @@ body {
 .login-form .create-account-button:hover {
     color:#0083FF;
 }
+
+@media only screen and (max-device-width: 430px){
+    .login-form {
+        width: 50vw;
+       }    
+   }

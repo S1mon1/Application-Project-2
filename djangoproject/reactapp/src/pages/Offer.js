@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import DeleteButton from '../components/DeleteButton'
 
+
 const Offer = () => {
     const { id: offerId } = useParams()
     const [offer, setOffer] = useState(null)
@@ -40,6 +41,7 @@ const Offer = () => {
         <div>
             <Navbar/>
             <DeleteButton onClick={deleteOffer}/>
+            <img src={offer?.image} />
             <p>{offer?.brand}</p>
             <p>{offer?.model}</p>
             <p>{offer?.description}</p>

@@ -47,21 +47,15 @@ const AddOffer = () => {
         <div>
             <Navbar/>
             <form className='formContainer'>
-
-
-            <div>
-    <label htmlFor="brand">Brand</label>
-    <input type="text" id="brand" name="brand" value={offer?.brand || ''} onChange={handleInputChange} />
-</div>
-<div>
-    <label htmlFor="model">Model</label>
-    <input type="text" id="model" name="model" value={offer?.model || ''} onChange={handleInputChange} />
-</div>
-<div>
-    <label htmlFor="description">Description</label>
-    <textarea id="description" name="description" value={offer?.description || ''} onChange={handleInputChange} />
-</div>
-
+                <div>
+                    <input type="text" id="brand" name="brand" value={offer?.brand || ''} onChange={handleInputChange} placeholder="brand"/>
+                </div>
+                <div>
+                    <input type="text" id="model" name="model" value={offer?.model || ''} onChange={handleInputChange} placeholder="model"/>
+                </div>
+                <div>
+                    <textarea id="description" name="description" value={offer?.description || ''} onChange={handleInputChange} placeholder="description"/>
+                </div>
 
                 <button onClick={createOffer}>Add</button>
             </form>

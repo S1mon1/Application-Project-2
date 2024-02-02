@@ -1,0 +1,23 @@
+.offers-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20em;
+    padding: 10em;
+    overflow: auto;
+}
+
+img {
+    width: 200%;
+    height: 200%;
+    object-fit: cover;
+}
+
+@media only screen and (max-device-width: 430px){
+    .navbar{
+        display: none;
+    }
+    .offers-list {
+        display:block;
+        padding: 5em;
+    }
+   }

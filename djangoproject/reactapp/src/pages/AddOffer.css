@@ -1,5 +1,14 @@
 .formContainer{
     display: flex;
     flex-direction: column;
-    
+    gap: 20px;
+    background-color: #6cacec;
+    padding: 30px;
+    border-radius: 25px;
 }
+input {
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+}
+
