@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react'
+import Navbar from '../components/Navbar'
 
-const Users = () => {
-    const [users, setUsers] = useState([]);
+const UserList = () => {
+  const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -16,6 +16,15 @@ const Users = () => {
       });
   }, []);
 
+  const deleteUser = async (userId) => {
+    try {
+      await axios.delete(`/authentification/users/${userId}/`);
+      setUsers(users.filter(user => user.id !== userId));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -23,14 +32,16 @@ const Users = () => {
   return (
     <div>
         <Navbar/>
-    <ul>
-      {users.map(user => (
-        <li key={user.id}>{user.username}</li>
-        
-      ))}
-    </ul>
+        <ul>
+        {users.map(user => (
+            <li key={user.id}>
+            {user.username}
+            <button onClick={() => deleteUser(user.id)}>Delete</button>
+            </li>
+        ))}
+        </ul>
     </div>
   );
-}
+};
 
-export default Users
+export default UserList;
