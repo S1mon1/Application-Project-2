@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Register.css'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const Register = () => {
  const [firstName, setFirstName] = useState('');
@@ -8,6 +9,7 @@ const Register = () => {
  const [email, setEmail] = useState('');
  const [password, setPassword] = useState('');
  const [confirmPassword, setConfirmPassword] = useState('');
+ const [errorMessage, setErrorMessage] = useState('');
 
  const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -34,9 +36,20 @@ const Register = () => {
  };
 
  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(firstName, lastName, email, password, confirmPassword);
- };
+  event.preventDefault();
+  axios.post('http://127.0.0.1:8000/authentification/register/', {
+      username: email,
+      password: password,
+      first_name: firstName,
+      last_name: lastName
+  })
+  .then(response => {
+      console.log('User registered successfully:', response.data);
+  })
+  .catch(error => {
+      setErrorMessage(error.message || 'An error occurred during registration.');
+  });
+};
 
  return (
     <div className="register-container">
