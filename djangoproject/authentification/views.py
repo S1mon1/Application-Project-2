@@ -10,6 +10,7 @@ from django.contrib.auth import get_user_model
 from django.http import Http404
 from django.views.generic import ListView
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 
 class UserRegistrationView(APIView):
     @swagger_auto_schema(
@@ -48,3 +49,17 @@ class UserListView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except User.DoesNotExist:
             raise Http404
+        
+class LogoutView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+
+        try:
+            refresh_token = request.data["refresh_token"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            logout(request)
+            return Response(status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
