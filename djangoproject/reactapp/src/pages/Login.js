@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Sidebar from '../components/Sidebar';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -42,6 +43,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <Sidebar/>
       <form className="login-form" onSubmit={handleSubmit}>
         <input type="email" name="email" value={email} onChange={handleInputChange} placeholder="Email" />
         <input type="password" name="password" value={password} onChange={handleInputChange} placeholder="Password" />

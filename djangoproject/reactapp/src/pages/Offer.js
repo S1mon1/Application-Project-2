@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import DeleteButton from '../components/DeleteButton'
+import Sidebar from '../components/Sidebar'
 
 
 const Offer = () => {
@@ -39,6 +40,7 @@ const Offer = () => {
 
     return (
         <div>
+            <Sidebar/>
             <Navbar/>
             <DeleteButton onClick={deleteOffer}/>
             <img src={offer?.image} />

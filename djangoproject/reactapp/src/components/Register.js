@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import './Register.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Sidebar from './Sidebar';
 
 const Register = () => {
 
@@ -58,6 +59,7 @@ const Register = () => {
 
  return (
     <div className="register-container">
+      <Sidebar/>
         <form className="register-form" onSubmit={handleSubmit}>
             <input type="text" name="firstName" value={firstName} onChange={handleInputChange} placeholder="First Name" />
             <input type="text" name="lastName" value={lastName} onChange={handleInputChange} placeholder="Last Name" />

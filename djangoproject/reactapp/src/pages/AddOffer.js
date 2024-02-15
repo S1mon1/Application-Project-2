@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import "./AddOffer.css"
 import { useParams, useNavigate} from 'react-router-dom'
 import {useState, useEffect} from 'react'
+import Sidebar from '../components/Sidebar';
 
 const AddOffer = () => {
 
@@ -46,6 +47,7 @@ const AddOffer = () => {
 
         <div>
             <Navbar/>
+            <Sidebar/>
             <form className='formContainer'>
                 <div>
                     <input type="text" id="brand" name="brand" value={offer?.brand || ''} onChange={handleInputChange} placeholder="brand"/>

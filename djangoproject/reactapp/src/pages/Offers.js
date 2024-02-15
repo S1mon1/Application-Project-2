@@ -4,8 +4,10 @@ import ListOffer from '../components/ListOffer'
 import Navbar from '../components/Navbar'
 import AddButton from '../components/AddButton'
 import './Offers.css'
+import Sidebar from '../components/Sidebar'
 
 const Offers = () => {
+const isAuthenticated = !!localStorage.getItem('access');
 
     let [offers, setOffers] = useState([])
 
@@ -22,8 +24,11 @@ const Offers = () => {
 
     return (
         <div>
+            <Sidebar/>
             <Navbar/>
+            {isAuthenticated ? (
             <AddButton/>
+            ) : null}
             <div className="offers-list">
                 {offers.map((offer, index) =>(
                     <ListOffer key={index} offer={offer}/>

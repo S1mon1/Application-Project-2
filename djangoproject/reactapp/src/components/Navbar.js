@@ -14,6 +14,7 @@ const Navbar = () => {
     }
   );
     const navigate = useNavigate();
+    const isAuthenticated = !!localStorage.getItem('access');
 
     const handleLogout = async () => {
         try {
@@ -45,7 +46,9 @@ const Navbar = () => {
             <Link to="/users">Users</Link>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
+            {isAuthenticated ? (
             <button onClick={handleLogout}>Logout</button>
+            ) : null}
         </nav>
     );
 };
